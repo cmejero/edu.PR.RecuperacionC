@@ -16,5 +16,7 @@ namespace EduRecuperacionC.Servicios
         /// </summary>
         /// <returns></returns>
         public int menuYSeleccionPrincipal();
+
+        public int menuYSeleccionModificacion();
     }
 }

@@ -23,5 +23,6 @@ namespace EduRecuperacionC.Servicios
         /// metodo que se encarga en escribir en fichero los alumnos de la lista
         /// </summary>
         public void escribirAlumnos();
+        public void leerFichero();
     }
 }

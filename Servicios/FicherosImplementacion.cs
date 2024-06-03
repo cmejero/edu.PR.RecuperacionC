@@ -49,7 +49,7 @@ namespace EduRecuperacionC.Servicios
             try
             {
 
-                st= new StreamWriter(Program.rutaFicheroAlumno, true);
+                st= new StreamWriter(Program.rutaFicheroAlumno);
                 foreach (AlumnoDto alumno in Program.listaAlumnos)
                 {
 
@@ -63,7 +63,7 @@ namespace EduRecuperacionC.Servicios
                 // llamar al metodo escribir fichero para escribir en ficheroLog si hay algun error
                 escribirFichero("ha ocurrido un error, intentelo más tarde" + io.Message);
                 
-                Console.WriteLine("Ha ocurrido un error en ficheros, intentelo más tarde. error(1001)" + io.Message);
+                Console.WriteLine("Ha ocurrido un error en ficheros, intentelo más tarde. error(1001)");
             }finally
             {
                 if (st != null)
@@ -74,9 +74,70 @@ namespace EduRecuperacionC.Servicios
             
 
         }
-        
 
-        
+        public void leerFichero()
+        {
+            StreamReader sr = null;
+
+
+            try
+            {
+               sr = new StreamReader(Program.rutaFicheroAlumno);
+                string lineas;
+
+                while((lineas = sr.ReadLine()) != null)
+                {
+
+                    string[] linea = lineas.Split(';');
+
+                    AlumnoDto alumno = new AlumnoDto(); 
+
+                    alumno.DNI1 = linea[0];
+                    alumno.NombreAlumno = linea[1];
+
+                    Program.listaAlumnos.Add(alumno);
+
+                }
+
+                
+
+            }
+            catch(IOException io) {
+
+                escribirFichero("Ha ocurrido un error en esribir ficheros" + io.Message);
+                Console.WriteLine("Se ha producido un error, intentelo más tarde");
+
+            }
+            finally
+            {
+                if(sr != null)
+                {
+                    sr.Close();
+
+                }
+
+            }
+            
+        }
+
+        private long generarId()
+        {
+            long nuevoId;
+            int tamanioLista = Program.listaAlumnos.Count;
+
+            if (tamanioLista > 0)
+            {
+                nuevoId = Program.listaAlumnos[tamanioLista - 1].IdAlumno + 1;
+            }
+            else
+            {
+                nuevoId = 1;
+            }
+            return nuevoId;
+        }
+
+
+
 
     }
 }

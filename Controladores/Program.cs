@@ -28,6 +28,8 @@ namespace EduRecuperacionC.Controladores
 
             bool cerrarMenu = true;
 
+            fi.leerFichero();
+
             do
             {
                 try
@@ -42,8 +44,9 @@ namespace EduRecuperacionC.Controladores
                             fi.escribirFichero("El usuario ha seleccionado cerrar menu");
                            
                             Console.WriteLine("Has seleccionado cerrar menu");
-                            cerrarMenu = false;
                             fi.escribirAlumnos();
+                            cerrarMenu = false;
+                            
                             break;
 
                         case 1:
@@ -65,6 +68,14 @@ namespace EduRecuperacionC.Controladores
                             oi.mostrarAlumnos();
                             break;
 
+                        case 4:
+                            Console.WriteLine("Has seleccionado modificar alumnos");
+                            fi.escribirFichero("El usuario ha seleccionado modificar alumnos");
+                            oi.modificarAlumno();
+                            break;
+
+                        
+
                         default:                           
                             fi.escribirFichero("El usuario ha seleccionado una opcion incorrecta en menu principal");                           
                             Console.WriteLine("La opcion seleccionada no corresponde con niguna");
@@ -74,7 +85,7 @@ namespace EduRecuperacionC.Controladores
                                         
                         fi.escribirFichero("ha ocurrido un error, intentelo más tarde" + ex.Message);
                                                                         
-                        Console.WriteLine("Ha ocurrido un error, intentelo más tarde" +ex.Message);
+                        Console.WriteLine("Ha ocurrido un error, intentelo más tarde" );
                 }
 
             } while (cerrarMenu);

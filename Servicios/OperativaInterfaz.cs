@@ -25,5 +25,7 @@ namespace EduRecuperacionC.Servicios
         /// metodo que se encarga de mostrar los alumnos de la lista alumnos
         /// </summary>
         public void mostrarAlumnos();
+
+        public void modificarAlumno();
     }
 }
