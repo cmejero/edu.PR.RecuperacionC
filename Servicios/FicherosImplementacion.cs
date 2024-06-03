@@ -120,21 +120,7 @@ namespace EduRecuperacionC.Servicios
             
         }
 
-        private long generarId()
-        {
-            long nuevoId;
-            int tamanioLista = Program.listaAlumnos.Count;
-
-            if (tamanioLista > 0)
-            {
-                nuevoId = Program.listaAlumnos[tamanioLista - 1].IdAlumno + 1;
-            }
-            else
-            {
-                nuevoId = 1;
-            }
-            return nuevoId;
-        }
+       
 
 
 
