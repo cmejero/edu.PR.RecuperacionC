@@ -22,7 +22,7 @@ namespace EduRecuperacionC.Util
             {
                 DateTime fechaActual = DateTime.Now;
 
-                string fechaString = fechaActual.ToString("ddMMyy");
+                string fechaString = fechaActual.ToString("ddMMyyyy");
 
                 fecha = String.Concat("log-", fechaString, ".txt");
 

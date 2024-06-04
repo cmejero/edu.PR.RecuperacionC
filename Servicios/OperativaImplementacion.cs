@@ -45,6 +45,11 @@ namespace EduRecuperacionC.Servicios
                     alumno.Telefono = Console.ReadLine();
                     Console.WriteLine("Introduzca su email");
                     alumno.Email = Console.ReadLine();
+                    Console.WriteLine("Introduzca su fecha de nacimiento");
+                    string fecha= Console.ReadLine();
+                    DateOnly fechaNa = DateOnly.Parse(fecha);
+                    alumno.FechaNacimiento = fechaNa;
+
 
                     Program.listaAlumnos.Add(alumno);
 
@@ -181,7 +186,14 @@ namespace EduRecuperacionC.Servicios
                                 case 6:
 
                                     Console.WriteLine("Introduzca el email");
-                                    alumno.NombreAlumno = Console.ReadLine();
+                                    alumno.Email = Console.ReadLine();
+                                    break;
+
+                                case 7:
+                                    Console.WriteLine("Introduzca la fecha de nacimiento, formato: dd-MM-yyyy");
+                                    string fecha = Console.ReadLine();
+                                    DateOnly fechaNac = DateOnly.Parse(fecha);
+                                    alumno.FechaNacimiento = fechaNac;
                                     break;
 
                                 default:

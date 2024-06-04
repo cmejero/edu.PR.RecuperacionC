@@ -47,9 +47,11 @@ namespace EduRecuperacionC.Servicios
             Console.WriteLine("0. Volver");
             Console.WriteLine("1. Modificar nombre");
             Console.WriteLine("2. Modificar primer apellido");
-            Console.WriteLine("3. Modificar  direccion");
-            Console.WriteLine("4. Modificar  telefono");
-            Console.WriteLine("5. Modificar  email");
+            Console.WriteLine("3. Modificar segundo apellido");
+            Console.WriteLine("4. Modificar  direccion");
+            Console.WriteLine("5. Modificar  telefono");
+            Console.WriteLine("6. Modificar  email");
+            Console.WriteLine("7. Modificar  fecha de Nacimiento");
             Console.WriteLine("############################");
 
             opcionUsuario = Convert.ToInt32(Console.ReadLine());

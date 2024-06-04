@@ -41,7 +41,7 @@ namespace EduRecuperacionC.Controladores
 
                         case 0:
                             
-                            fi.escribirFichero("El usuario ha seleccionado cerrar menu");
+                          //  fi.escribirFichero("El usuario ha seleccionado cerrar menu");
                            
                             Console.WriteLine("Has seleccionado cerrar menu");
                             fi.escribirAlumnos();
@@ -51,33 +51,33 @@ namespace EduRecuperacionC.Controladores
 
                         case 1:
                             
-                            fi.escribirFichero("El usuario ha seleccionado dar alta alumno");
+                           // fi.escribirFichero("El usuario ha seleccionado dar alta alumno");
                             oi.darAlta();
                             Console.WriteLine("Has seleccionado dar alta alumno");
 
                             break;
                         case 2:
                             Console.WriteLine("Has seleccionado borrar alumno");
-                            fi.escribirFichero("El usuario ha seleccionado borrar alumno");
+                            //fi.escribirFichero("El usuario ha seleccionado borrar alumno");
                             oi.borrarAlumno();
                             break;
 
                         case 3:
                             Console.WriteLine("Has seleccionado mostrar alumnos");
-                            fi.escribirFichero("El usuario ha seleccionado mostrar alumnos");
+                           // fi.escribirFichero("El usuario ha seleccionado mostrar alumnos");
                             oi.mostrarAlumnos();
                             break;
 
                         case 4:
                             Console.WriteLine("Has seleccionado modificar alumnos");
-                            fi.escribirFichero("El usuario ha seleccionado modificar alumnos");
+                          //  fi.escribirFichero("El usuario ha seleccionado modificar alumnos");
                             oi.modificarAlumno();
                             break;
 
                         
 
                         default:                           
-                            fi.escribirFichero("El usuario ha seleccionado una opcion incorrecta en menu principal");                           
+                            //fi.escribirFichero("El usuario ha seleccionado una opcion incorrecta en menu principal");                           
                             Console.WriteLine("La opcion seleccionada no corresponde con niguna");
                             break;
                     }

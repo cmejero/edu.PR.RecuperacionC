@@ -49,15 +49,49 @@ namespace EduRecuperacionC.Servicios
             try
             {
 
-                st= new StreamWriter(Program.rutaFicheroAlumno);
+
+
+
                 foreach (AlumnoDto alumno in Program.listaAlumnos)
                 {
+                    for (int i = 0; i < Program.listaAlumnos.Count - 1; i++)
+                    {
+
+
+                        for (int j = 0; j < Program.listaAlumnos.Count - i - 1; j++)
+                        {
+                            if (alumno.DNI1[j] > alumno.DNI1[j + 1])
+                            {
+
+                                AlumnoDto alumn = Program.listaAlumnos[j];
+                                Program.listaAlumnos[j] = Program.listaAlumnos[j + 1];
+                                Program.listaAlumnos[j + 1] = alumn;
+
+
+
+                            }
+
+                        }
+
+
+
+
+
+
+                    }
+
+                    st = new StreamWriter(Program.rutaFicheroAlumno);
+
 
                     st.WriteLine(alumno.ToString(';'));
-                    
+
+
 
                 }
-            }catch (IOException io)
+
+
+            }
+            catch (IOException io)
             {
 
                 // llamar al metodo escribir fichero para escribir en ficheroLog si hay algun error
@@ -92,8 +126,17 @@ namespace EduRecuperacionC.Servicios
 
                     AlumnoDto alumno = new AlumnoDto(); 
 
-                    alumno.DNI1 = linea[0];
-                    alumno.NombreAlumno = linea[1];
+                    alumno.NombreAlumno = linea[0];
+                    alumno.Apellido1Alumno = linea[1];
+                    alumno.Apellido2Alumno = linea[2];
+                    alumno.DNI1 = linea[3];
+                    alumno.Direccion = linea[4];
+                    alumno.Telefono = linea[5];
+                    alumno.Email = linea[6];
+                    string fecha = linea[7];
+                    DateOnly fechaNa = DateOnly.Parse(fecha);
+                    alumno.FechaNacimiento = fechaNa;
+                    
 
                     Program.listaAlumnos.Add(alumno);
 
